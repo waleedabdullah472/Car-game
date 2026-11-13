@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* Inline premium name, used wherever "Fariya" appears inside a sentence. */
+  .fname {
+    font-weight: 700;
+    background: linear-gradient(100deg, #ffd6e2 0%, #ff8fb0 28%, #f0b54a 50%, #ff8fb0 72%, #ffd6e2 100%);
+    background-size: 220% 100%;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    filter: drop-shadow(0 0 .35em rgba(255, 143, 176, .45));
+    animation: fname-shimmer 3.6s linear infinite;
+  }
+  .fname::after { content: ""; }
+  @keyframes fname-shimmer { to { background-position: -220% 0; } }
+}
+@media (prefers-reduced-motion: reduce) { .fname { animation: none; } }
